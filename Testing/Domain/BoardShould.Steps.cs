@@ -38,7 +38,6 @@ namespace Testing
         private void a_board_is_full_of_mines()
         {
             _fakeMineGenerator.ShouldCreateMines(true);
-            
         }
 
         private void the_player_loses_a_life()

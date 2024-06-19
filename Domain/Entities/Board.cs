@@ -21,6 +21,11 @@ namespace Domain
             return _player;
         }
 
+        public bool PlayerIsAtTop()
+        {
+            return _player.Position.Y == _dimensions.height - 1;
+        }
+
         public void MovePlayer(MoveDirection movementDir)
         {
             switch(movementDir)
