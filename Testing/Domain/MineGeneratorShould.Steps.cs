@@ -5,8 +5,8 @@ namespace Testing
 {
     public partial class MineGeneratorShould : Specification
     {
-        private MineGenerator _mineGenerator;
-        private IEnumerable<Mine> _mines = null;
+        private MineGenerator _mineGenerator = null!;
+        private IEnumerable<Mine> _mines = null!;
 
         private void a_mine_generator()
         {

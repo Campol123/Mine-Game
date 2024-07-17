@@ -5,9 +5,9 @@ namespace Testing
 {
     public partial class BoardShould : Specification
     {
-        private Board _board;
-        private Player player;
-        private FakeMineGenerator _fakeMineGenerator;
+        private Board _board = null!;
+        private Player player = null!;
+        private FakeMineGenerator _fakeMineGenerator = null!;
 
         protected override void BeforeEach()
         {
