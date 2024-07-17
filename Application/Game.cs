@@ -2,26 +2,16 @@ using Domain;
 
 namespace Application;
 
-public class Game
+public class Game(Board board)
 {
-    private Board board;
-    private Player player;
-    public Game(Board board)
-    {
-        this.board = board;
-    }
     public GameState Play(MoveDirection moveDirection)
     {
-        if (board.GetPlayer().Lives <= 0)
-        {
-            return GameState.Lost;
-        }
-        else if(board.PlayerIsAtTop())
-        {
-            return GameState.Won;
-        }
+
+        var currentGameState = CalculateGameState();
+        if (currentGameState != GameState.Playing) return currentGameState;
+        
         board.MovePlayer(moveDirection);
-        return default;
+        return CalculateGameState();
     }
 
     public Position GetPlayerPosition()
@@ -32,6 +22,21 @@ public class Game
     public int GetPlayerLives()
     {
         return board.GetPlayer().Lives;
+    }
+
+    private GameState CalculateGameState()
+    {
+        if (board.GetPlayer().Lives <= 0)
+        {
+            return GameState.Lost;
+        }
+        
+        if (board.PlayerIsAtTop())
+        {
+            return GameState.Won;
+        }
+
+        return default;
     }
 }
 

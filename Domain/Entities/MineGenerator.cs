@@ -6,7 +6,7 @@ public interface IAmAMineGenerator
 }
 public class MineGenerator: IAmAMineGenerator
 {
-    private List<Mine> mines;
+    private List<Mine> mines = null!;
     public IEnumerable<Mine> GenerateMines(Dimensions dimensions)
     {
         mines = new List<Mine>();

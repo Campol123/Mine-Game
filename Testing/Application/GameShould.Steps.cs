@@ -7,10 +7,10 @@ namespace Testing.Application;
 
 public partial class GameShould : Specification
 {
-    private Board _board;
-    private Player player;
-    private FakeMineGenerator _fakeMineGenerator;
-    private Game game;
+    private Board _board = null!;
+    private Player player = null!;
+    private FakeMineGenerator _fakeMineGenerator = null!;
+    private Game game = null!;
     private GameState currentState;
     
     protected override void BeforeEach()

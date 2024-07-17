@@ -4,7 +4,7 @@ namespace Testing;
 
 public abstract class Specification
 {
-    [OneTimeSetUp]
+    [SetUp]
     protected virtual void BeforeEach()
     {
         

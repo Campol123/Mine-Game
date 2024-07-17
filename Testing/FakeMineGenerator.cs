@@ -4,7 +4,7 @@ namespace Testing;
 
 public class FakeMineGenerator: IAmAMineGenerator
 {
-    private List<Mine> mines;
+    private List<Mine> mines = null!;
     private bool _shouldCreateMines;
     public void ShouldCreateMines(bool shouldCreateMines)
     {
